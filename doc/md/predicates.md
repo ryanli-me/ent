@@ -145,7 +145,7 @@ users := client.User.Query().
         s.Where(
             sql.In(
                 s.C(user.FieldID),
-                sql.Select(t.C(user.FieldID)).From(t).Where(sql.EQ(t.C(car.FieldModel), "Tesla")),
+                sql.Select(t.C(car.FieldOwnerID)).From(t).Where(sql.EQ(t.C(car.FieldModel), "Tesla")),
             ),
         )
 	}).
